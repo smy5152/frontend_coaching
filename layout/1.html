@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="node_modules/chart.js/dist/chart.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script> -->
+    <style>
+        .chart-month {
+            /* height: 75% !important;
+            width: 75% !important; */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <canvas id='myLineChart' class="chart-month">
+            Your browser does not support the canvas element.
+        </canvas>
+        <canvas id='myMuliLineChart' class="chart-month">
+            Your browser does not support the canvas element.
+        </canvas>
+    </div>
+    <script> // LINE CHART
+        // BEGIN: LINE CHART CONFIGURATION
+        var canvasLine = document.getElementById("myLineChart");
+        var ctxLine = canvasLine.getContext("2d");
+
+        const labelsLine = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+        ];
+
+        const dataLine = {
+            labels: labelsLine,
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(0, 99, 132)',
+                borderColor: 'rgb(0, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45],
+            }]
+        };
+
+        const configLine = {
+            type: 'line', //bar
+            data: dataLine,
+            options: {}
+        };
+
+        const myLineChart = new Chart(
+            ctxLine,
+            configLine
+        );
+        // END: LINE CHART CONFIGURATION
+
+    </script>
+</body>
+
+</html>
